@@ -1,0 +1,4 @@
+version-control: github
+src_repo: Tencent/rapidjson
+tag_prefix: v^
+seperator: .
