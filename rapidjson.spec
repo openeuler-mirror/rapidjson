@@ -33,7 +33,7 @@ memory friendly, each JSON valude occupies exactly 16/20 bytes for most
 %package help
 Summary:              Documentation-files for rapidjson
 BuildArch:            noarch
-BuildRequires:        %{_sbindir}/hardlink doxygen
+BuildRequires:        hardlink doxygen
 Provides:             rapidjson-doc = %{version}-%{release}
 Obsoletes:            rapidjson-doc < %{version}-%{release}
 %description help
