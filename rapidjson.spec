@@ -1,7 +1,7 @@
 %global debug_package   %{nil}
 Name:                 rapidjson
 Version:              1.1.0
-Release:              9
+Release:              10
 Summary:              small & selft-contained fast JSON parser and generator for C++
 License:              MIT
 URL:                  http://miloyip.github.io/rapidjson
@@ -66,8 +66,8 @@ cd -
 %{__cp} -a CHANGELOG.md readme*.md examples %{buildroot}%{_pkgdocdir}
 %{_bindir}/find %{buildroot} -type f -name 'CMake*.txt' -print0 | \
  %{_bindir}/xargs -0 %{__rm} -fv
-%{_sbindir}/hardlink -v %{buildroot}%{_includedir}
-%{_sbindir}/hardlink -v %{buildroot}%{_pkgdocdir}
+hardlink -v %{buildroot}%{_includedir}
+hardlink -v %{buildroot}%{_pkgdocdir}
 
 %check
 CTEST_EXCLUDE=".*valgrind.*"
@@ -88,5 +88,8 @@ cd -
 %doc %{_pkgdocdir}
 
 %changelog
+* Wed Jul 29 2020 lingsheng <lingsheng@huawei.com> - 1.1.0-10
+- Not use hardlink absolute path
+
 * Mon Jun 8 2020 Jeffery.Gao <gaojianxing@huawei.com> - 1.1.0-9
 - Package init
